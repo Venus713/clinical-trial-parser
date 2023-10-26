@@ -5,13 +5,138 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89c5aef8-9e0e-43ca-8ea9-61555942add5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/clinical-trial-parser.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lambda.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.aws-sam/build/ClinicalTrialParserFunction/src" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.aws-sam/build/template.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samconfig.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/col/set/set.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/col/set/set_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/col/tuple/tuple.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/col/tuple/tuple_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/conf/conf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/lsh/minhash.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/lsh/minhash_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/param/parameters.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/resource/resource.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/resource/resource_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/trie/trie.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/trie/trie_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/trie/value.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/fio/file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/intmath/intmath.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/slice/slice.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/slice/slice_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/text/exponential_multiplier.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/text/roman.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/text/text.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/text/text_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/text/title.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/common/util/timer/timer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/conf/conf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/criteria/criteria.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/criteria/parse_criteria.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/criteria/parse_criteria_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/eligibility/type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/cfg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/cfg_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/grammar.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/interpreter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/interpreter_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/item.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/lexer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/lexer_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/parser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/parser_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/production/criterion.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/production/test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/rules.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/token.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/parser/tree.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/relation/relation.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/relation/relation_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/studies/studies.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/studies/study.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/studies/study_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/units/unit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/units/unit_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/units/units.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/variables/variable.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/variables/variable_id.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/variables/variable_type.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/ct/variables/variables.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/units/units.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/variables/variables.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.aws-sam/build.toml" beforeDir="false" afterPath="$PROJECT_DIR$/.aws-sam/build.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/clinical-trial-parser.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinical-trial-parser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/event.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/col/set/set.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/col/set/set_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/col/tuple/tuple.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/col/tuple/tuple_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/conf/conf.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/lsh/minhash.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/lsh/minhash_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/param/parameters.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/resource/resource.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/resource/resource_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/trie/trie.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/trie/trie_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/trie/value.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/fio/file.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/intmath/intmath.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/slice/slice.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/slice/slice_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/text/exponential_multiplier.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/text/roman.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/text/text.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/text/text_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/text/title.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/util/timer/timer.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/criteria/criteria.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/criteria/parse_criteria.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/criteria/parse_criteria_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/eligibility/type.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/cfg.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/cfg_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/grammar.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/interpreter.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/interpreter_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/item.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/lexer.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/lexer_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/parser.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/parser_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/production/criterion.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/production/test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/rules.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/token.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/parser/tree.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/relation/relation.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/relation/relation_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/studies/studies.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/studies/study.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/studies/study_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/units/unit.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/units/unit_id.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/units/units.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/variables/variable.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/variables/variable_id.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/variables/variable_type.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ct/variables/variables.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/config/cfg.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/config/nel.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/config/ner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/config/search.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/units/units.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/variables/variables.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/template.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,11 +167,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",

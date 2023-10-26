@@ -1,0 +1,25 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "kitsa-ctai-parser"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-14o46b2b3ym6v"
+s3_prefix = "kitsa-ctai-parser"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
+parameter_overrides = "Stage=\"Dev\""
+disable_rollback = true
+
+[Dev]
+[Dev.deploy]
+[Dev.deploy.parameters]
+stack_name = "kitsa-ctai-parser"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-14o46b2b3ym6v"
+s3_prefix = "kitsa-ctai-parser"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "Stage=\"Dev\""
+image_repositories = []

@@ -5,15 +5,14 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 
-	"./src/config/conf"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/facebookresearch/Clinical-Trial-Parser/src/ct/studies"
-	"github.com/facebookresearch/Clinical-Trial-Parser/src/ct/units"
-	"github.com/facebookresearch/Clinical-Trial-Parser/src/ct/variables"
+	"kitsa.ai/clinical-trial-parser/utils/conf"
+	"kitsa.ai/clinical-trial-parser/utils/ct/studies"
+	"kitsa.ai/clinical-trial-parser/utils/ct/units"
+	"kitsa.ai/clinical-trial-parser/utils/ct/variables"
 )
 
 type EligibilityRelation struct {
@@ -40,11 +39,7 @@ func LambdaHandler(ctx context.Context, event events.APIGatewayProxyRequest) (ev
 
 	// Create and initialize the parser
 	p := NewParser()
-	fmt.Println("=============$$$$$$$$$$==============")
-	if err := p.LoadParameters(); err != nil {
-		return events.APIGatewayProxyResponse{StatusCode: 500, Body: "Failed to load parameters"}, nil
-	}
-	fmt.Println("************************")
+
 	if err := p.Initialize(); err != nil {
 		return events.APIGatewayProxyResponse{StatusCode: 500, Body: "Failed to initialize the parser"}, nil
 	}
@@ -81,42 +76,19 @@ func NewParser() *Parser {
 	return &Parser{}
 }
 
-// LoadParameters loads parameters from command line and a config file.
-func (p *Parser) LoadParameters() error {
-	// Print the working directory
-	wd, err := os.Getwd()
-	if err != nil {
-		fmt.Println("Error getting working directory:", err)
-	}
-	fmt.Println("Working Directory:", wd)
-
-	configfile := filepath.Join(wd, "resources", "config", "cfg.conf")
-	fmt.Println("config path:", configfile)
-	parameters, err := conf.Load(configfile)
-	fmt.Println("ERROR::::", err)
-	if err != nil {
-		return err
-	}
-	p.parameters = parameters
-
-	//p.parameters = make(map[string]string)
-	//p.parameters["variable_file"] = "https://drive.google.com/file/d/1muXtDIN-e1btKd1_6-IYrAR_2ZKSj5Es/view?usp=sharing"
-	//p.parameters["unit_file"] = "https://drive.google.com/file/d/1a9t7Y3kvn5LjqAqX3XZnrNSWs3NqSsqM/view?usp=sharing"
-
-	return nil
-}
-
 // Initialize initializes the parser by loading the resource data.
 func (p *Parser) Initialize() error {
-	fname := p.parameters.GetResourcePath("variable_file")
-	variableDictionary, err := variables.Load(fname)
+	// Get the S3 URLs from environment variables
+	variablesS3URL := os.Getenv("VARIABLES_S3_URL")
+	unitsS3URL := os.Getenv("UNITS_S3_URL")
+
+	variableDictionary, err := variables.Load(variablesS3URL)
 	if err != nil {
 		return err
 	}
 	variables.Set(variableDictionary)
 
-	fname = p.parameters.GetResourcePath("unit_file")
-	unitDictionary, err := units.Load(fname)
+	unitDictionary, err := units.Load(unitsS3URL)
 	if err != nil {
 		return err
 	}
@@ -226,6 +198,7 @@ func main() {
 	lambda.Start(LambdaHandler)
 }
 
+// Local debug function
 //func main() {
 //	// Create a mock event
 //	data := [][]string{
